@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "6e468a5d-d95f-4191-b4f8-4f900cefd94e",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get car by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzcwMWE3ZGM5MTA0NWI2MTRlZmQwYSIsInR5cGUiOiJ1c2VyIiwiaWF0IjoxNjczOTg2NjI2LCJleHAiOjE2NzM5OTM4MjZ9.Pdcq-OWbC40dxB0ZR2XLkcDS9yZBcnf3bKRF4Gb4mJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "test",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/cars/63c6e9420acc7bce1b8e51f3w",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"cars",
+						"63c6e9420acc7bce1b8e51f3w"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cars by query",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzcwMWE3ZGM5MTA0NWI2MTRlZmQwYSIsInR5cGUiOiJ1c2VyIiwiaWF0IjoxNjczOTg2NjI2LCJleHAiOjE2NzM5OTM4MjZ9.Pdcq-OWbC40dxB0ZR2XLkcDS9yZBcnf3bKRF4Gb4mJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/cars/?brand=string1&price=1.1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"cars",
+						""
+					],
+					"query": [
+						{
+							"key": "brand",
+							"value": "string1"
+						},
+						{
+							"key": "price",
+							"value": "1.1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "creater car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzcwMWE3ZGM5MTA0NWI2MTRlZmQwYSIsInR5cGUiOiJ1c2VyIiwiaWF0IjoxNjczOTg2NjI2LCJleHAiOjE2NzM5OTM4MjZ9.Pdcq-OWbC40dxB0ZR2XLkcDS9yZBcnf3bKRF4Gb4mJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"1233\",\n    \"brand\": \"string1\",\n    \"name\": \"string1\",\n    \"year\": \"string1\",\n    \"price\": 1.1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/cars/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"cars",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzcwMWE3ZGM5MTA0NWI2MTRlZmQwYSIsInR5cGUiOiJ1c2VyIiwiaWF0IjoxNjczOTg2NjI2LCJleHAiOjE2NzM5OTM4MjZ9.Pdcq-OWbC40dxB0ZR2XLkcDS9yZBcnf3bKRF4Gb4mJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"63c6e9420acc7bce1b8e51f3\",\n    \"brand\": \"brand\",\n    \"name\": \"name\",\n    \"year\": \"1999\",\n    \"price\": \"1.2\",\n    \"123213\": \"123213\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/cars/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"cars",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzcwMWE3ZGM5MTA0NWI2MTRlZmQwYSIsInR5cGUiOiJ1c2VyIiwiaWF0IjoxNjczOTg2NjI2LCJleHAiOjE2NzM5OTM4MjZ9.Pdcq-OWbC40dxB0ZR2XLkcDS9yZBcnf3bKRF4Gb4mJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"63c6e9420acc7bce1b8e51f3\",\n    \"brand\": \"brand\",\n    \"name\": \"name\",\n    \"year\": \"1999\",\n    \"price\": 2.2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/cars/63c6e5fa6437602306246c70",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"cars",
+						"63c6e5fa6437602306246c70"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"login2\",\n    \"password\": \"password2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "singIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"ulogin\",\n    \"password\": \"upassword\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/singIn/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"singIn",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
