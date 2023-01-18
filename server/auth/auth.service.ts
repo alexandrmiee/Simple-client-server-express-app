@@ -12,7 +12,7 @@ interface Token {
 export class AuthService {
   constructor(private readonly $users: UsersService, private readonly $config: ConfigService) {}
 
-  async singIn(login: string, password: string) {
+  async signIn(login: string, password: string) {
     try {
       const [user] = await this.$users.findUsers({ login });
 

@@ -9,7 +9,7 @@ export class AuthController {
   async singIn(req: Request, res: Response) {
     try {
       const { login, password } = req.body;
-      const data = await this.$auth.singIn(login, password);
+      const data = await this.$auth.signIn(login, password);
 
       res.send(data);
     } catch (e) {
