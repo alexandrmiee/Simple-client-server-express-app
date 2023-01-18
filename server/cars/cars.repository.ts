@@ -9,8 +9,8 @@ export class CarsRepository {
     return this.$model.findById(id);
   }
 
-  findMany(car: Partial<Car>) {
-    return this.$model.find(this.transformId(car));
+  findMany(car: Partial<Car>, limit: number = 0) {
+    return this.$model.find(this.transformId(car), null, { limit });
   }
 
   create(car: Omit<Partial<Car>, 'id'>) {
@@ -18,7 +18,14 @@ export class CarsRepository {
   }
 
   update(car: Partial<Car>) {
-    return this.$model.findOneAndUpdate({ id: car.id }, car, { new: true });
+    const { id, ...data } = car;
+    return this.$model.findOneAndUpdate(
+      { _id: new Types.ObjectId(car.id) },
+      {
+        $set: { ...data },
+      },
+      { new: true },
+    );
   }
 
   delate(id: string) {

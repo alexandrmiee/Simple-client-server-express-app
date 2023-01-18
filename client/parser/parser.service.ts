@@ -1,5 +1,4 @@
 import { Argv } from 'yargs';
-import { hideBin } from 'yargs/helpers';
 
 export class ParserService {
   // TODO: types

@@ -17,10 +17,10 @@ export type CarModel = Document<unknown, any, Car> &
 
 const carSchema = new Schema<Car>(
   {
-    brand: { type: String, required: true },
-    name: { type: String, required: true },
-    year: { type: String, required: true },
-    price: { type: Number, required: true },
+    brand: { type: String, required: true, index: true },
+    name: { type: String, required: true, index: true },
+    year: { type: String, required: true, index: true },
+    price: { type: Number, required: true, index: true },
   },
   {
     timestamps: true,

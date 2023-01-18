@@ -15,9 +15,9 @@ export class CarsService {
     }
   }
 
-  async findCars(car: Partial<Car>) {
+  async findCars(car: Partial<Car>, limit: number = 0) {
     try {
-      const cars = await this.$cars.findMany(this.transformFromRequest(car));
+      const cars = await this.$cars.findMany(this.transformFromRequest(car), limit);
 
       return cars.map(this.transformToResponse);
     } catch (e) {

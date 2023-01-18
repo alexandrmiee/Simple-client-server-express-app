@@ -29,7 +29,8 @@ export class CarsController {
   // GET /cars/?id=1
   public async findByQuery(req: Request, res: Response) {
     try {
-      const data = await this.$cars.findCars(req.query);
+      const { limit, ...query } = req.query;
+      const data = await this.$cars.findCars(query, +limit);
       res.send(data);
     } catch (e) {
       res.status(e.status ?? 500);

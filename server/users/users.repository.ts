@@ -22,11 +22,16 @@ export class UsersRepository {
   }
 
   update(user: Partial<User>) {
-    console.log({ user });
-    return this.$model.findOneAndUpdate({ id: new Types.ObjectId(user.id) }, user, { new: true, overwrite: true });
+    return this.$model.findOneAndUpdate(
+      { id: new Types.ObjectId(user.id) },
+      {
+        $set: { ...user },
+      },
+      { new: true },
+    );
   }
 
-  delate(id: string) {
+  delete(id: string) {
     return this.$model.findOneAndDelete({ _id: new Types.ObjectId(id) });
   }
 

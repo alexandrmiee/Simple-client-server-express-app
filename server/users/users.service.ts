@@ -56,14 +56,6 @@ export class UsersService {
     }
   }
 
-  async deleteUser(id: string) {
-    try {
-      await this.$users.delate(id);
-    } catch (e) {
-      throw new ApiError(`User with id ${id} cannot be deleted`, e.message);
-    }
-  }
-
   async checkPassword(login: string, password: string) {
     const user = await this.$users.findByLogin(login);
 

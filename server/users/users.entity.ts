@@ -18,8 +18,8 @@ export type UserModel = Document<unknown, any, User> &
 
 const usersSchema = new Schema<User>(
   {
-    login: { type: String, required: true, unique: true, index: true, sparse: true },
-    password: { type: String, required: true, sparse: true },
+    login: { type: String, required: true, unique: true, index: true },
+    password: { type: String, required: true },
     accessToken: { type: String, required: false },
     refreshToken: { type: String, required: false },
   },

@@ -1,7 +1,7 @@
 import { AuthService } from './auth.service.js';
 import jwt from 'jsonwebtoken';
-import { User } from '../users/users.entity.js';
 
+// TODO: mock types
 const userServiceMock = {
   findUser: () => jest.fn(),
   findUsers: () => jest.fn(),
